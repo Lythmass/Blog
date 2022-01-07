@@ -1,0 +1,12 @@
+<%- include("partials/header"); -%>
+
+<% contents.forEach(function(content) { %>
+     <h1><%= content.title %></h1>
+     <% if(content.title == "Home") { %>
+          <p><%= content.text %></p>
+     <% } else { %>
+          <p><%= content.text.substring(0, 100) %>... <a href = "/posts/<%= content.title %>">Read More</a></p>
+     <% } %>
+<% }); %>
+
+<%- include("partials/footer"); -%>
